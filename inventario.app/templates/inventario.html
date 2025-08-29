@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Inventario | PC1</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><h1>Inventario (SQLite)</h1></header>
+  <main>
+    <section class="toolbar">
+      <a class="btn" href="/pc2-form">Abrir formulario (PC2)</a>
+    </section>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Producto</th>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in productos %}
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.nombre }}</td>
+          <td>{{ p.cantidad }}</td>
+          <td>${{ "%.2f"|format(p.precio) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

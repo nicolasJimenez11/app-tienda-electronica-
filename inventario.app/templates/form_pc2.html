@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>PC2 → Enviar Producto</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><h1>Enviar Producto (PC2 → PC1)</h1></header>
+  <main>
+    <form class="card" method="post" action="/v1/productos">
+      <label>ID Producto
+        <input type="number" name="id" required>
+      </label>
+      <label>Nombre producto
+        <input type="text" name="nombre" placeholder="Ej: Monitor 24”" required>
+      </label>
+      <label>Cantidad
+        <input type="number" name="cantidad" min="0" required>
+      </label>
+      <label>Precio
+        <input type="number" step="0.01" name="precio" min="0" required>
+      </label>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <p>También puedes enviar JSON a <code>/v2/productos</code> con el mismo esquema.</p>
+  </main>
+</body>
+</html>
